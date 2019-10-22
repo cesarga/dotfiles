@@ -33,5 +33,5 @@ export ZPLGM[MUTE_WARNINGS]=
 export ZPFX="${XDG_CACHE_HOME}/zsh/polaris"
 
 # z
-_Z_DATA="${XDG_CACHE_HOME/zsh/.z}"
+export _Z_DATA="${XDG_CACHE_HOME/zsh/.z}"
 
