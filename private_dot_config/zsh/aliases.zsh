@@ -1,18 +1,18 @@
 alias refresh='source "$ZDOTDIR/.zshrc"'
-alias reload='exec "$SHELL" -l'
+alias reload='exec "${SHELL}" -l'
 
-alias cls='clear' # Good 'ol Clear Screen command
+alias cls='clear'
 
 alias lc='ls -ACFv --group-directories-first --width=80'
 
-function cd {
+cd() {
     builtin cd "$@" &&
     lc
 }
 
 alias mkdir='mkdir -p'
 
-function mkcdir() {
+mkcdir() {
     mkdir -p -- "$1"&&
     builtin cd -P -- "$1"
 }

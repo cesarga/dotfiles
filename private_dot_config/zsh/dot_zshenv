@@ -31,3 +31,7 @@ export ZPLGM[ZCOMPDUMP_PATH]="${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 export ZPLGM[COMPINIT_OPTS]='-C'
 export ZPLGM[MUTE_WARNINGS]=
 export ZPFX="${XDG_CACHE_HOME}/zsh/polaris"
+
+# z
+_Z_DATA="${XDG_CACHE_HOME/zsh/.z}"
+

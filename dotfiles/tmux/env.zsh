@@ -1,2 +1,0 @@
-export DISABLE_AUTO_TITLE=true
-export ZSH_TMUX_AUTOSTART=true

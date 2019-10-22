@@ -11,11 +11,11 @@ deb() {
     return 1
   fi
 
-  de "${1}" /bin/bash -l
+  de "${1}" bash -l
 }
 
-alias logs='dc logs -ft'
-alias run='dc run --rm'
+alias dclogs='dc logs -ft'
+alias dcrun='dc run --rm'
 alias work='de --user devilbox php bash -l'
 
 alias dclimg='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'

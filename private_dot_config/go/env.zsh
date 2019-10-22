@@ -1,4 +1,4 @@
-if [ -d "$GOPATH" ]; then
+if [[ -d "$GOPATH" ]]; then
   export PATH="$GOPATH/bin:$PATH"
 elif [[ "$(command -v go)" ]]; then
   export PATH="$(go env GOPATH)/bin:$PATH"

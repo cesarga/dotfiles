@@ -25,3 +25,9 @@ php7.3-zip
 php7.3-intl
 python3.7
 EOF
+
+COMPOSER_HASH=76a7060ccb93902cd7576b67264ad91c8a2700e2
+
+if [[ ! "$(command -v composer)" ]]; then
+  wget "https://raw.githubusercontent.com/composer/getcomposer.org/${COMPOSER_HASH}/web/installer" -O - -q | php -- --quiet
+fi

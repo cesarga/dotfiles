@@ -19,9 +19,26 @@ export DISABLE_UNTRACKED_FILES_DIRTY="true"
 #   source $file
 # done
 
+# Source environment variables
+typeset -U env_var_files
+env_var_files=($XDG_CONFIG_HOME/**/env.zsh)
+for file in ${(M)env_var_files}
+do
+  source $file
+done
+
 [[ -f "$ZDOTDIR/prompt.zsh" ]] && source "$ZDOTDIR/prompt.zsh"
-[[ -f "$ZDOTDIR/aliases.zsh" ]] && source "$ZDOTDIR/aliases.zsh"
 [[ -f "$ZDOTDIR/zplugin.zsh" ]] && source "$ZDOTDIR/zplugin.zsh"
+
+# Source aliases
+typeset -U aliases_files
+aliases_files=($XDG_CONFIG_HOME/**/aliases.zsh)
+for file in ${(M)aliases_files}
+do
+  source $file
+done
+
+#[[ -f "$ZDOTDIR/aliases.zsh" ]] && source "$ZDOTDIR/aliases.zsh"
 
 ## initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
