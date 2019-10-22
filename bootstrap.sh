@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# NOT IMPLEMENTED
+
 set -ex
 
 if [[ ! "$(command -v chezmoi)" ]]; then
