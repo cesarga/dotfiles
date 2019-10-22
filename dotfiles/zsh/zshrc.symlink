@@ -1,0 +1,98 @@
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+
+# init faster
+#export skip_global_compinit=1
+export DISABLE_AUTO_UPDATE="true"
+export DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
+
+# disable zsh bundled function mtools command mcd
+# which causes a conflict.
+compdef -d mcd
+
+#bindkey '^[^[[D' backward-word
+#bindkey '^[^[[C' forward-word
+#bindkey '^[[5D' beginning-of-line
+#bindkey '^[[5C' end-of-line
+#bindkey '^[[3~' delete-char
+#bindkey '^?' backward-delete-char
+
+# load antigen
+source "$HOME/antigen.zsh"
+
+# oh my zsh
+antigen use oh-my-zsh
+
+antigen bundle <<EOBUNDLES
+
+colored-man-pages
+common-aliases
+git
+git-flow
+last-working-dir
+pip
+sudo
+tmux
+exract
+zsh-dircolors-solarized
+
+EOBUNDLES
+
+#npm
+#yarn
+#z
+
+# bundles
+antigen bundle leophys/zsh-plugin-fzf-finder
+antigen bundle rupa/z
+
+# zsh users
+antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# zsh other
+antigen bundle djui/alias-tips
+
+# antigen theme
+antigen theme romkatv/powerlevel10k
+
+# antigen
+antigen apply
+
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh

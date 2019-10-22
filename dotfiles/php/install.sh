@@ -1,0 +1,1 @@
+#!/usr/bin/env bashCOMPOSER_HASH=76a7060ccb93902cd7576b67264ad91c8a2700e2[[ "$(command -v composer)" ]] ||  wget -qO- "https://raw.githubusercontent.com/composer/getcomposer.org/$COMPOSER_HASH/web/installer" | php -- --quiet

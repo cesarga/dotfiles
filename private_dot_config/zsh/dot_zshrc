@@ -1,0 +1,59 @@
+# init faster
+#export skip_global_compinit=1
+export DISABLE_AUTO_UPDATE="true"
+export DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# all of our zsh files
+# typeset -U config_files
+# config_files=($ZDOTDIR/**/*.zsh)
+
+## load the path files
+# for file in ${(M)config_files:#*/path.zsh}
+# do
+#   source $file
+# done
+
+## load everything but the path and completion files
+# for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+# do
+#   source $file
+# done
+
+[[ -f "$ZDOTDIR/prompt.zsh" ]] && source "$ZDOTDIR/prompt.zsh"
+[[ -f "$ZDOTDIR/aliases.zsh" ]] && source "$ZDOTDIR/aliases.zsh"
+[[ -f "$ZDOTDIR/zplugin.zsh" ]] && source "$ZDOTDIR/zplugin.zsh"
+
+## initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+# for file in ${(M)config_files:#*/completion.zsh}
+# do
+#   source $file
+# done
+
+# unset config_files
+
+# disable zsh bundled function mtools command mcd
+# which causes a conflict.
+compdef -d mcd
+
+#bindkey '^[^[[D' backward-word
+#bindkey '^[^[[C' forward-word
+#bindkey '^[[5D' beginning-of-line
+#bindkey '^[[5C' end-of-line
+#bindkey '^[[3~' delete-char
+#bindkey '^?' backward-delete-char
+
+# load antigen
+#export ANTIGEN_AUTO_CONFIG=false
+#typeset -a ANTIGEN_CHECK_FILES=("$ZDOTDIR/.antigenrc" "$ZDOTDIR/.zshrc")
+
+#source "/usr/share/zsh-antigen/antigen.zsh"
+#antigen init "$ZDOTDIR/.antigenrc"
+
+# shortcut to this dotfiles path is $ZSH
+#export ZSH="$ZDOTDIR/bundles/robbyrussell/oh-my-zsh"
+
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh

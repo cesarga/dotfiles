@@ -1,0 +1,33 @@
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+umask 22
+
+# X11
+export DISPLAY=:0
+
+# Ensure languages are set
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# This fixes using SSH in urxvt
+if [[ "${TERM}" == 'rxvt-unicode' ]] ; then
+    export TERM='xterm'
+fi
+
+# Term for WSL
+if [[ "$(uname -r)" == *_"Microsoft"_* ]] ; then
+    export TERM="xterm-256color"
+fi
+
+# zplugin
+declare -A ZPLGM
+export ZPLGM[HOME_DIR]="${HOME}/libs/zplugin"
+export ZPLGM[BIN_DIR]="${ZPLGM[HOME_DIR]}/bin"
+export ZPLGM[PLUGINS_DIR]="${ZPLGM[HOME_DIR]}/plugins"
+export ZPLGM[COMPLETIONS_DIR]="${ZPLGM[HOME_DIR]}//root_completions"
+export ZPLGM[SNIPPETS_DIR]="${ZPLGM[HOME_DIR]}/snippets"
+export ZPLGM[ZCOMPDUMP_PATH]="${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
+export ZPLGM[COMPINIT_OPTS]='-C'
+export ZPLGM[MUTE_WARNINGS]=
+export ZPFX="${XDG_CACHE_HOME}/zsh/polaris"

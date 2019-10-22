@@ -1,0 +1,19 @@
+# -- user customizations -------------------------------------------------------
+
+# List of plugins
+set -g @tpm_plugins '          \
+  tmux-plugins/tpm             \
+  tmux-plugins/tmux-sensible   \
+  tmux-plugins/tmux-resurrect  \
+  tmux-plugins/tmux-fpp        \
+  Morantron/tmux-fingers       \
+  tmux-plugins/tmux-yank       \
+'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '"${HOME}"/lib/tpm/tpm'

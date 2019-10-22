@@ -1,0 +1,6 @@
+[submodule "libs/tpm"]
+	path = libs/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule "libs/zplugin/bin"]
+	path = libs/zplugin/bin
+	url = https://github.com/zdharma/zplugin.git
