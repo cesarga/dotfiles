@@ -7,8 +7,12 @@
 /private_dot_config/chezmoi/chezmoi.yaml
 /libs/tpm/lib/
 /libs/tpm/tests/
+
 README.md
 LICENSE
+
+Dockerfile
+/build-docker-image.sh
 
 /assets/
 /configs/
