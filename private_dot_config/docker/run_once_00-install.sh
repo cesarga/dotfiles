@@ -8,6 +8,7 @@
 #
 #sudo apt-get update
 
-curl -fsSL https://get.docker.com | sudo sh
-
-sudo usermod -aG docker "$USER"
+if [[ ! "$(command -v docker)" ]]; then
+    curl -fsSL https://get.docker.com | sudo sh
+#    sudo usermod -aG docker "$USER"
+fi
