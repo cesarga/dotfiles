@@ -3,5 +3,5 @@
 # fi
 
 if [[ ! $(sudo service docker status | grep 'is running') ]]; then
-  sudo service docker start
+  (sudo service docker start >/dev/null 2>&1 &)
 fi
