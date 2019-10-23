@@ -5,6 +5,10 @@
 curl -sfL https://git.io/cesarga | bash && exec $(which zsh) -l
 ```
 
+## Resources
++ [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
++ 
+
 ## TODO:
 - [x] Migrate configuration to WSL2
 - [x] Integrate the Nix package manager
