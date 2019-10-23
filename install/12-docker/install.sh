@@ -5,9 +5,6 @@ if [[ ! "$(command -v docker)" ]]; then
 
   # Add the current user to the `docker` group to execute Docker commands without sudo
   sudo usermod -aG docker "$USER"
-
-  # Hack to reload user groups without logging out and in
-  exec sg docker newgrp `id -gn`
 fi
 
 #if [[ ! "$(command -v npiperelay.exe)" ]]; then

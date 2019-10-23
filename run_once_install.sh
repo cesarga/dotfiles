@@ -25,3 +25,7 @@ done
 #
 sudo apt-get autoremove -y
 
+# Hack to reload user groups without logging out and in
+if [[ ! $(id | grep '999(docker)') ]]; then
+  exec sg docker newgrp `id -gn`
+fi

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install
-sudo apt-get install -y <<-EOF
+sudo apt-get install -y $(cat <<-EOF
   apt-transport-https
   ack-grep
   aria2
@@ -32,3 +32,4 @@ sudo apt-get install -y <<-EOF
   wget
   xclip
 EOF
+)
