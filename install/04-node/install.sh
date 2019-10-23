@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 #
-# Node 11
+# Node 12
 #
 
 if [[ ! "$(command -v node)" ]]; then
-  curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
   sudo apt-get install -y nodejs
 fi
 

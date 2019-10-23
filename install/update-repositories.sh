@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-if [[ "$(command -v apt-get)" ]]; then
-    sudo apt-get update
+if exists-exec 'apt-get'; then
+  sudo apt-get update
 else
-    echo 'apt-get in not installed'
-    exit 1;
+  echo 'apt-get in not installed'
+  exit 1;
 fi
 
-if [[ "$(command -v nix-channel)" ]]; then
-    nix-channel --update
+if exists-exec 'nix-env'; then
+  nix-channel --update
 fi

@@ -1,19 +1,26 @@
 #!/usr/bin/env bash
 
-set -e
-
 VERSION='3.7'
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y $(cat <<EOF
-python${VERSION}
-python3-pip
-EOF
+if [[ ! "$(command -v python3.7)" ]]; then
+
+  # Install python3 and pip using apt
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y $(cat <<-EOF
+		python${VERSION}
+		python3-pip
+	EOF
 )
 
-if [[ "$(command -v python3)" ]]; then
-    sudo update-alternatives --install "$(command -v python3)" python3 "$(command -v "python$VERSION")" 1
-fi
+  # Update alternatives for python3 and `python` binaries
+  if [[ "$(command -v python3)" ]]; then
+      sudo update-alternatives --install "$(command -v python3)" python3 "$(command -v "python$VERSION")" 1
+  fi
 
-if [[ "$(command -v python)" ]]; then
-    sudo update-alternatives --install "$(command -v python)" python "$(command -v "python$VERSION")" 1
+  if [[ "$(command -v python)" ]]; then
+      sudo update-alternatives --install "$(command -v python)" python "$(command -v "python$VERSION")" 1
+  fi
+
+  # Fix missing `apt_pkg` error when running `apt-get update`
+  sudo apt-get remove python3-apt
+  sudo apt-get install python3-apt
 fi
