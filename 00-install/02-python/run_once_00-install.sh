@@ -3,7 +3,6 @@
 set -e
 
 VERSION='3.7'
-VERSION='3.7'
 
 sudo apt-get install -y <<EOF
 python${VERSION}
@@ -16,4 +15,4 @@ sudo update-alternatives --install \
 
 sudo update-alternatives --install \
     "$(command -v python)" python \
-    "$(command -v "python3")" 1
+    "$(command -v "python$VERSION")" 1
