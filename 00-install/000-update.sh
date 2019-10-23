@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-sudo apt-get update
+if [[ "$(command -v apt-get)" ]]; then
+    sudo apt-get update
+fi
+
+if [[ "$(command -v nix-channel)" ]]; then
+    nix-channel --update
+fi
