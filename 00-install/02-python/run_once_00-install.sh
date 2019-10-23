@@ -4,10 +4,11 @@ set -e
 
 VERSION='3.7'
 
-sudo apt-get install -y <<EOF
+sudo apt-get install -y $(cat <<EOF
 python${VERSION}
 python3-pip
 EOF
+)
 
 sudo update-alternatives --install \
     "$(command -v python3)" python3 \
