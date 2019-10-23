@@ -7,6 +7,7 @@
 /private_dot_config/chezmoi/chezmoi.yaml
 /libs/tpm/lib/
 /libs/tpm/tests/
+/libs/
 
 README.md
 LICENSE

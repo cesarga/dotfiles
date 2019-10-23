@@ -9,5 +9,12 @@ if [[ ! "$(command -v chezmoi)" ]]; then
 fi
 
 chezmoi init https://github.com/cesarga/dotfiles.git
-chezmoi source -- submodule update --init --recursive
+#chezmoi source -- submodule update --init --recursive
+
+curl -s -L -o /tmp/zplugin-v2.3.tar.gz https://github.com/zdharma/zplugin/archive/v2.3.tar.gz
+chezmoi import --strip-components 1 --destination "$HOME/libs/zplugin/bin" /tmp/zplugin-v2.3.tar.gz
+
+curl -s -L -o /tmp/tpm-master.tar.gz https://github.com/tmux-plugins/tpm/archive/master.tar.gz
+chezmoi import --strip-components 1 --destination "$HOME/libs/tpm" /tmp/tpm-master.tar.gz
+
 chezmoi apply
