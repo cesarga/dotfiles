@@ -17,3 +17,5 @@ fi
 if [[ "$(command -v python)" ]]; then
     sudo update-alternatives --install "$(command -v python)" python "$(command -v "python$VERSION")" 1
 fi
+
+sudo apt-get install --reinstall python3-apt
