@@ -20,3 +20,8 @@ for file in $(find "${CHEZMOI_INSTALLDIR}" -type f -name 'install.sh' | sort) ; 
   source "${file}"
 done
 
+#
+# Cleaning
+#
+sudo apt-get autoremove -y
+

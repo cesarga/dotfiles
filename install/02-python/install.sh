@@ -21,6 +21,6 @@ if [[ ! "$(command -v python3.7)" ]]; then
   fi
 
   # Fix missing `apt_pkg` error when running `apt-get update`
-  sudo apt-get remove python3-apt
-  sudo apt-get install python3-apt
+  sudo apt-get remove -y python3-apt
+  sudo apt-get install -y python3-apt
 fi

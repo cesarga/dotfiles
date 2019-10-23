@@ -1,8 +1,14 @@
 # cesarga dotfiles
 
 ## Installation
+
+## From a clean Ubuntu 18.04 installation
 ```bash
 curl -sfL https://git.io/cesarga | bash && exec $(which zsh) -l
+```
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
 ## Resources
