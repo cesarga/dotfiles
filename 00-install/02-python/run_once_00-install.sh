@@ -10,5 +10,10 @@ python3-pip
 EOF
 )
 
-sudo update-alternatives --install "$(command -v python3)" python3 "$(command -v "python$VERSION")" 1
-sudo update-alternatives --install "$(command -v python)" python "$(command -v "python$VERSION")" 1
+if [[ ! "$(command -v python3)" ]]; then
+    sudo update-alternatives --install "$(command -v python3)" python3 "$(command -v "python$VERSION")" 1
+fi
+
+if [[ ! "$(command -v python)" ]]; then
+    sudo update-alternatives --install "$(command -v python)" python "$(command -v "python$VERSION")" 1
+fi
