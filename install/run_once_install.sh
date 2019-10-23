@@ -11,7 +11,7 @@ source "${CHEZMOI_INSTALLDIR}/update-repositories.sh"
 #
 # Source all install files in alphabetical path order
 #
-for file in $(find "${CHEZMOI_INSTALLDIR}" -type -f -name 'install.sh' | sort) ; do
+for file in $(find "${CHEZMOI_INSTALLDIR}" -type f -name 'install.sh' | sort) ; do
     source "${file}"
 done
 
