@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 if [[ ! "$(command -v go)" ]]; then
-    source ../../helpers/ensure-nix.sh && ensure-nix
+    source "$HOME/.nix-profile/etc/profile.d/nix.sh"
     nix-env --install go
 fi
