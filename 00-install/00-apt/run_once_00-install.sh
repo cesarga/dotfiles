@@ -20,6 +20,8 @@ cmake
 containerd.io
 curl
 daemonize
+dbus
+dbus-x11
 gnupg-agent
 htop
 httpie

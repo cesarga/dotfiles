@@ -3,8 +3,7 @@
 set -e
 
 VERSION='3.7'
-
-sudo apt-get update
+VERSION='3.7'
 
 sudo apt-get install -y <<EOF
 python${VERSION}

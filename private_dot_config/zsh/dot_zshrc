@@ -73,4 +73,12 @@ compdef -d mcd
 # shortcut to this dotfiles path is $ZSH
 #export ZSH="$ZDOTDIR/bundles/robbyrussell/oh-my-zsh"
 
+# Initialization scripts
+typeset -U init_files
+init_files=($XDG_CONFIG_HOME/**/init.zsh)
+for file in ${(M)init_files}
+do
+  source $file
+done
+
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh

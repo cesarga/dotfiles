@@ -27,6 +27,7 @@ Write-Color -Text 'Installing ',"$Distro" -Color White,Blue -NoNewLine
 & $Executable install --root | Out-Null
 Write-Color -Text ' ✔️' -Color Green
 
+# TODO: https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-insiders-preview-build-18945/
 Write-Color -Text 'Creating ','wsl.conf ','from default' -Color White,Blue,White -NoNewLine
 $WslConf = (Get-Content .\wsl\wsl.conf) -Join '\\n'
 & $Executable run "touch /etc/wsl.conf && echo -e $WslConf > /etc/wsl.conf" | Out-Null
