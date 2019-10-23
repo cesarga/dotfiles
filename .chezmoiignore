@@ -4,9 +4,11 @@
 /.gitmodules
 
 /bootstrap.sh
+/bootstrap.ps1
 /private_dot_config/chezmoi/chezmoi.yaml
 /libs/tpm/lib/
 /libs/tpm/tests/
+/windows/
 
 README.md
 LICENSE
