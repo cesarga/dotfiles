@@ -5,7 +5,7 @@ apt-install-packages () {
     --no-install-recommends \
     --verbose-versions \
     --show-upgraded \
-    --quiet \
+    --quiet=2 \
     --yes \
     $(cat "$@")
 }
