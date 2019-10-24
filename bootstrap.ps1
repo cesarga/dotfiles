@@ -58,8 +58,7 @@ wsl --terminate $Distro | Out-Null
 Write-Color -Text ' ✔️' -Color Green
 
 Write-Color -Text 'Installing ', "dotfiles" -Color White,Blue
-$CacheBust=(-join ((65..90) + (97..122) | Get-Random -Count 16 | % {[char]$_}))
-& $Executable run "curl -sfL https://git.io/cesarga?hash=$CacheBust | bash && exec `$(command -v zsh) -l -c "exit""
+& $Executable run 'curl -sfL https://git.io/cesarga | bash && exec $(command -v zsh) -l -c "exit"'
 Write-Color -Text '✔️' -Color Green
 
 Write-Color -Text 'Restarting ',"$Distro" -Color White,Blue -NoNewLine
