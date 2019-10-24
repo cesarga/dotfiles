@@ -12,10 +12,11 @@ chezmoi init https://github.com/cesarga/dotfiles.git
 
 # weasel-pageant
 if [[ ! -d /wsl2/libs/weasel-pageant ]]; then
-#  BASE_USER="$USER"
   sudo install -d -m755 -o $(id -u) -g $(id -g) /wsl2/libs/weasel-pageant
-#  sudo install -d -m755 -o $(id -u "$BASE_USER") -g $(id -g "$BASE_USER") /wsl2/libs
-#  sudo install -d -m755 -o $(id -u "$BASE_USER") -g $(id -g "$BASE_USER") /wsl2/libs/weasel-pageant
+fi
+
+if [[ ! -d "$HOME/libs" ]]; then
+  mkdir -p "$HOME/libs"
 fi
 
 if [[ ! -h "$HOME/libs/weasel-pageant" ]]; then
