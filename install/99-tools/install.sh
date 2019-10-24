@@ -11,11 +11,9 @@ __apt_install-packages <<-EOF
 	imagemagick
 	ipcalc
 	jq
-	kubectl
 	lnav
 	ncdu
 	nnn
-	pet
 	progress
 	s4cmd
 	silversearcher-ag
@@ -23,3 +21,6 @@ __apt_install-packages <<-EOF
 	unzip
 	webp
 EOF
+
+#kubectl
+#pet

@@ -11,16 +11,17 @@ fi
 chezmoi init https://github.com/cesarga/dotfiles.git
 
 # weasel-pageant
-if [[ ! -d /wsl2/libs/weasel-pageant ]]; then
-  sudo install -d -m755 -o $(id -u) -g $(id -g) /wsl2/libs/weasel-pageant
-fi
-
-if [[ ! -d "$HOME/libs" ]]; then
-  mkdir -p "$HOME/libs"
-fi
-
 if [[ ! -h "$HOME/libs/weasel-pageant" ]]; then
-  ln -s /wsl2/libs/weasel-pageant "$HOME/libs/weasel-pageant"
+  if [[ ! -d "$HOME/libs" ]]; then
+    mkdir -p "$HOME/libs"
+  fi
+
+  if [[ ! -d /z/.wsl2/libs/weasel-pageant ]]; then
+#    sudo install -d -m755 -o $(id -u) -g $(id -g) /z/.wsl2/libs/weasel-pageant
+    mkdir -p /z/.wsl2/libs/weasel-pageant
+  fi
+
+  ln -s /z/.wsl2/libs/weasel-pageant "$HOME/libs/weasel-pageant"
 fi
 
 sudo apt-get install unzip -y --no-install-recommends -qq
