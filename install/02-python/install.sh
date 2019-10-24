@@ -6,6 +6,7 @@ if [[ ! "$(command -v "python$VERSION")" ]]; then
   sudo DEBIAN_FRONTEND=noninteractive apt-get install -y $(cat <<-EOF
 		python3
 		python3-pip
+		python3-apt
 	EOF
 	)
 
