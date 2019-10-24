@@ -21,7 +21,6 @@ apt-install-packages <<-EOF
   php7.3-soap
   php7.3-zip
   php7.3-intl
-  python3.7
 EOF
 
 COMPOSER_HASH=76a7060ccb93902cd7576b67264ad91c8a2700e2
