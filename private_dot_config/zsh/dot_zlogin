@@ -1,2 +1,2 @@
-echo "WSLIP: $(wslip)"
-echo "WSLHOST: $WSL_HOST"
+echo "WSLIP: $WSLIP"
+echo "WSLHOST: $WSLHOST"
