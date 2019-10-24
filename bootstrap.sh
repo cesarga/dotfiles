@@ -12,10 +12,12 @@ chezmoi init https://github.com/cesarga/dotfiles.git
 
 # weasel-pageant
 if [[ ! -d /wsl2/libs/weasel-pageant ]]; then
-    mkdir -p /wsl2/libs/weasel-pageant
+  BASE_USER="$USER"
+  sudo install -d -m755 -o $(id -u) -g $(id -g) /wsl2
+  sudo install -d -m755 -o $(id -u "$BASE_USER") -g $(id -g "$BASE_USER") /wsl2/libs
 fi
 if [[ ! -h "$HOME/libs/weasel-pageant" ]]; then
-    ln -s /wsl2/libs/weasel-pageant "$HOME/libs/weasel-pageant"
+  ln -s /wsl2/libs/weasel-pageant "$HOME/libs/weasel-pageant"
 fi
 curl -s -L -o /tmp/weasel-pageant-1.4.zip https://github.com/vuori/weasel-pageant/releases/download/v1.4/weasel-pageant-1.4.zip
 chezmoi import --strip-components 1 --destination "$HOME/libs/weasel-pageant" /tmp/weasel-pageant-1.4.zip
