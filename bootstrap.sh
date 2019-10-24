@@ -22,8 +22,13 @@ if [[ ! -h "$HOME/libs/weasel-pageant" ]]; then
   ln -s /wsl2/libs/weasel-pageant "$HOME/libs/weasel-pageant"
 fi
 
+sudo apt-get install unzip -y --no-install-recommends -qq
+TMPDIR=$(mktemp -d)
 curl -s -L -o /tmp/weasel-pageant-1.4.zip https://github.com/vuori/weasel-pageant/releases/download/v1.4/weasel-pageant-1.4.zip
-chezmoi import --strip-components 1 --destination "$HOME/libs/weasel-pageant" /tmp/weasel-pageant-1.4.zip
+unzip -q /tmp/weasel-pageant-1.4.zip -d "$TMPDIR"
+chmod -R +r "$TMPDIR"
+tar -c -z -f /tmp/weasel-pageant-1.4.tar.gz -C "$TMPDIR"
+chezmoi import --strip-components 2 --destination "$HOME/libs/weasel-pageant" /tmp/weasel-pageant-1.4.tar.gz
 
 
 # tpm
