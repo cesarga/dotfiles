@@ -28,7 +28,7 @@ TMPDIR=$(mktemp -d)
 curl -s -L -o /tmp/weasel-pageant-1.4.zip https://github.com/vuori/weasel-pageant/releases/download/v1.4/weasel-pageant-1.4.zip
 unzip -q /tmp/weasel-pageant-1.4.zip -d "$TMPDIR"
 chmod -R +r "$TMPDIR"
-tar -c -z -f /tmp/weasel-pageant-1.4.tar.gz -C "$TMPDIR"
+tar -c -z -f /tmp/weasel-pageant-1.4.tar.gz "$TMPDIR"
 chezmoi import --strip-components 2 --destination "$HOME/libs/weasel-pageant" /tmp/weasel-pageant-1.4.tar.gz
 
 
