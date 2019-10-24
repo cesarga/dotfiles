@@ -33,7 +33,7 @@ if noexists-exec 'zsh'; then
 		EOF
 fi
 
-if noexists-exec 'zsh'; then
+if exists-exec 'zsh'; then
   if [[ ! "${SHELL}" == "$(command -v zsh)" ]]; then
     sudo chsh -s "$(command -v zsh)" "${USER}"
   fi
