@@ -27,6 +27,7 @@ Write-Color -Text 'Installing ',"$Distro" -Color White,Blue -NoNewLine
 Write-Color -Text ' ✔️' -Color Green
 
 Write-Color -Text 'Creating ','wsl.conf ','from default' -Color White,Blue,White -NoNewLine
+& $Executable run "curl -sfL https://raw.githubusercontent.com/cesarga/dotfiles/master/wsl/fstab > /etc/fstab" | Out-Null
 & $Executable run "curl -sfL https://raw.githubusercontent.com/cesarga/dotfiles/master/wsl/wsl.conf > /etc/wsl.conf" | Out-Null
 Write-Color -Text ' ✔️' -Color Green
 

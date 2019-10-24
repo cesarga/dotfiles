@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install base system packages
-apt-install-packages <<-EOF
+__apt_install-packages <<-EOF
   apt-transport-https
   autoconf
   automake

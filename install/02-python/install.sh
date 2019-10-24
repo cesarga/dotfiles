@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if noexists-exec 'python3'; then
-  apt-install-packages <<-EOF
+  __apt_install-packages <<-EOF
 		python3
 		python3-pip
 		python3-apt

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-apt-install-packages <<-EOF
+__apt_install-packages <<-EOF
   neovim
   vim
 EOF

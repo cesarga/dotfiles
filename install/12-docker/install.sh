@@ -9,7 +9,7 @@ fi
 
 #if [[ ! "$(command -v socat)" ]]; then
 #  sudo apt-get install -y socat
-#  apt-install-packages <<-EOF
+#  __apt_install-packages <<-EOF
 #		socat
 #	EOF
 #fi
