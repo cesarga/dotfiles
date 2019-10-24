@@ -9,6 +9,7 @@
 /windows/
 /wsl/
 /assets/
+/exports/
 
 /bootstrap.sh
 /install/
