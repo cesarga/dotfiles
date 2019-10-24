@@ -28,8 +28,9 @@ fi
 if noexists-exec 'zsh'; then
 #  sudo apt-get -y -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold install zsh
     apt-install-packages <<-EOF
-    zsh
-	EOF
+			-o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold
+			zsh
+		EOF
 fi
 
 if noexists-exec 'zsh'; then
