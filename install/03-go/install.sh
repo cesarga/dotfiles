@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ ! "$(command -v go)" ]]; then
+if noexists-exec 'go'; then
   nix-env --install go
 fi

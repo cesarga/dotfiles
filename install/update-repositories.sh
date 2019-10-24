@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if exists-exec 'apt-get'; then
-  sudo apt-get update
+  sudo apt-get update --quiet
 else
   echo 'apt-get in not installed'
   exit 1;

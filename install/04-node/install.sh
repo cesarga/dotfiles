@@ -5,7 +5,9 @@
 #
 if [[ ! "$(command -v node)" ]]; then
   curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-  sudo apt-get install -y nodejs
+  apt-install-packages <<-EOF
+    nodejs
+	EOF
 fi
 
 
@@ -17,4 +19,7 @@ if [[ ! "$(command -v yarn)" ]]; then
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     sudo apt-get update
     sudo apt-get install -y yarn
+    apt-install-packages <<-EOF
+			yarn
+		EOF
 fi

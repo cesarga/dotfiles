@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
-#VERSION='3.6'
-
-#if [[ ! "$(command -v "python$VERSION")" ]]; then
-if [[ ! "$(command -v "python3")" ]]; then
+if noexists-exec 'python3'; then
   apt-install-packages <<-EOF
 		python3
 		python3-pip
 		python3-apt
+		python3-setuptools
 	EOF
+fi
 
+#VERSION='3.6'
+#if [[ ! "$(command -v "python$VERSION")" ]]; then
 #  # Install python3 and pip using apt
 #  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y $(cat <<-EOF
 #		python${VERSION}
@@ -29,4 +30,4 @@ if [[ ! "$(command -v "python3")" ]]; then
 #  # Fix missing `apt_pkg` error when running `apt-get update`
 #  sudo apt-get remove -y python3-apt
 #  sudo apt-get install -y python3-apt
-fi
+#fi
