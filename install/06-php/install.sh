@@ -4,7 +4,7 @@ sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 
 sudo apt-get update
 
-sudo apt-get install -y $(cat<<-EOF
+apt-install-packages <<-EOF
   php7.3
   php7.3-common
   php7.3-mysql
@@ -23,7 +23,6 @@ sudo apt-get install -y $(cat<<-EOF
   php7.3-intl
   python3.7
 EOF
-)
 
 COMPOSER_HASH=76a7060ccb93902cd7576b67264ad91c8a2700e2
 

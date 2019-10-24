@@ -4,12 +4,11 @@
 
 #if [[ ! "$(command -v "python$VERSION")" ]]; then
 if [[ ! "$(command -v "python3")" ]]; then
-  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y $(cat <<-EOF
+  apt-install-packages <<-EOF
 		python3
 		python3-pip
 		python3-apt
 	EOF
-	)
 
 #  # Install python3 and pip using apt
 #  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y $(cat <<-EOF

@@ -6,7 +6,9 @@ export CHEZMOI_INSTALLDIR="${CHEZMOI_SOURCEDIR}/install"
 #
 # Source global helpers
 #
-source "${CHEZMOI_SOURCEDIR}/helpers/helpers.sh"
+for file in $(find "${CHEZMOI_SOURCEDIR}/helpers" -type f -name '*.sh' | sort) ; do
+  source "${file}"
+done
 
 #
 # Update apt and nix package repositories
