@@ -2,19 +2,19 @@
 
 ## Installation
 
-## From a clean and WSL configured Ubuntu 18.04 installation
+## From  WSL2 Ubuntu-18.04
 ```bash
 curl -sfL https://git.io/cesarga | bash && exec $(which zsh) -l
 ```
 
-## From zero
+## From zero (PowerShell)
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/cesarga-powershell'))
 ```
 
 ## Resources
-+ [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
-+ 
++ [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
++ [zsh startup files](http://zsh.sourceforge.net/Intro/intro_3.html)
 
 ## TODO:
 - [x] Migrate configuration to WSL2
