@@ -56,9 +56,16 @@ Write-Color -Text 'Restarting ',"$Distro" -Color White,Blue -NoNewLine
 wsl --terminate $Distro | Out-Null
 Write-Color -Text ' ✔️' -Color Green
 
-Write-Color -Text 'Installing ', "dotfiles`n" -Color White,Blue -NoNewLine
-& $Executable run 'curl -sfL https://git.io/cesarga | bash && exec $(which zsh) -l'
+Write-Color -Text 'Installing ', "dotfiles" -Color White,Blue
+& $Executable run 'curl -sfL https://git.io/cesarga | bash && exit'
+Write-Color -Text '✔️' -Color Green
+
+Write-Color -Text 'Restarting ',"$Distro" -Color White,Blue -NoNewLine
+wsl --terminate $Distro | Out-Null
 Write-Color -Text ' ✔️' -Color Green
+
+Write-Color -Text 'Done!', -Color Green,Blue
+& $Executable
 
 # TODO: https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-insiders-preview-build-18945/
 # Copy-Item .\wsl\.wslconfig -Destination "$HOME"
