@@ -48,3 +48,6 @@ export ZSH_TMUX_AUTOSTART="false"
 export ZSH_DISABLE_COMPFIX=true
 export DISABLE_AUTO_TITLE="true"
 export DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# history
+export HISTFILE="$XDG_CACHE_HOME/zsh/.zsh_history"
