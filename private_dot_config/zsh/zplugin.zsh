@@ -55,8 +55,6 @@ zplugin light docker/compose
 zplugin ice as"completion"
 zplugin snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
-zplugin load zsh/terminfo
-
 # zsh-autosuggestions
 #zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
 #zplugin load zsh-users/zsh-autosuggestions
