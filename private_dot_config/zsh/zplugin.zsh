@@ -14,7 +14,6 @@ zplugin light zdharma/fast-syntax-highlighting
 
 zplugin load zdharma/history-search-multi-word
 
-setopt promptsubst
 zplugin ice depth=1
 zplugin light romkatv/powerlevel10k
 
