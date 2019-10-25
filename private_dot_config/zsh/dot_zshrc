@@ -17,8 +17,8 @@
 #   source $file
 # done
 
-[[ -f "$ZDOTDIR/prompt.zsh" ]] && source "$ZDOTDIR/prompt.zsh"
-[[ -f "$ZDOTDIR/zplugin.zsh" ]] && source "$ZDOTDIR/zplugin.zsh"
+source "$ZDOTDIR/prompt.zsh"
+source "$ZDOTDIR/zplugin.zsh"
 
 # Source aliases
 typeset -U aliases_files
