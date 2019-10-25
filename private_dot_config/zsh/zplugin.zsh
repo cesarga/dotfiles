@@ -9,8 +9,8 @@ autoload -Uz _zplugin
 zplugin ice wait"1" lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
 # zsh-autosuggestions
-zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
-zplugin load zsh-users/zsh-autosuggestions
+#zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
+#zplugin load zsh-users/zsh-autosuggestions
 
 zplugin load zdharma/history-search-multi-word
 
@@ -70,14 +70,6 @@ zplugin snippet "${XDG_CONFIG_HOME}/tmux/tmux.plugin.zsh"
 
 zplugin ice as"completion"
 zplugin snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
-
-# zsh-autosuggestions
-#zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
-#zplugin load zsh-users/zsh-autosuggestions
-
-# fast-syntax-highlighting
-#zplugin ice wait"1" lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
-zplugin light zdharma/fast-syntax-highlighting
 
 #zplugin ice wait"2"
 zplugin load zsh-users/zsh-history-substring-search
