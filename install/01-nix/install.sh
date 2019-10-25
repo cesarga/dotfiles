@@ -7,3 +7,7 @@ if noexists-exec 'nix-env'; then
   nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   nix-channel --update
 fi
+
+if noexists-exec 'lsd'; then
+  nix-env -i lsd
+fi

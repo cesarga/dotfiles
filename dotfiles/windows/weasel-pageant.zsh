@@ -1,1 +1,0 @@
-[[ -f "$HOME/.weasel-pageant" ]] &&  "$HOME/.weasel-pageant" -b -r -a "/tmp/.weasel-pageant-$USER"

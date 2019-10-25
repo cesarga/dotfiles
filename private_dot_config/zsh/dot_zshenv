@@ -20,6 +20,11 @@ if [[ "$(uname -r)" == *_"Microsoft"_* ]] ; then
     export TERM="xterm-256color"
 fi
 
+# history
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE="$XDG_CACHE_HOME/zsh/.zsh_history"
+
 # zplugin
 declare -A ZPLGM
 export ZPLGM[HOME_DIR]="${HOME}/libs/zplugin"
@@ -32,8 +37,25 @@ export ZPLGM[COMPINIT_OPTS]='-C'
 export ZPLGM[MUTE_WARNINGS]=
 export ZPFX="${XDG_CACHE_HOME}/zsh/polaris"
 
+# oh-my-zsh
+export ZSH_TMUX_AUTOSTART="false"
+export ZSH_DISABLE_COMPFIX=true
+export DISABLE_AUTO_TITLE="true"
+export DISABLE_AUTO_UPDATE="true"
+export DISABLE_UNTRACKED_FILES_DIRTY="true"
+
 # z
 export _Z_DATA="$XDG_CACHE_HOME/zsh/.z"
+
+# fzf
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_ALT_C_COMMAND='rg --hidden --sort-files --files --null 2> /dev/null | xargs -0 dirname | uniq'
+
+export FZF_COMPLETION_TRIGGER='ññ'
+export FZF_COMPLETION_OPTS='+c -x'
+
+export FZF_TMUX=1;
+export FZF_TMUX_HEIGHT='50%'
 
 # Source all environment variables
 typeset -U env_var_files
@@ -42,14 +64,3 @@ for file in ${(M)env_var_files}
 do
   source $file
 done
-
-# oh-my-zsh
-export ZSH_TMUX_AUTOSTART="false"
-export ZSH_DISABLE_COMPFIX=true
-export DISABLE_AUTO_TITLE="true"
-export DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# history
-export HISTSIZE=10000
-export SAVEHIST=10000
-export HISTFILE="$XDG_CACHE_HOME/zsh/.zsh_history"
