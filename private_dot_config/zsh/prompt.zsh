@@ -24,4 +24,4 @@ export CLICOLOR=1
 [[ -f "$HOME/.dircolors" ]] &&  eval "$(dircolors "$HOME/.dircolors")"
 
 # source powerlevel10k config
-[[ -f "$ZDOTDIR/p10k.zsh" ]] && source "$ZDOTDIR/p10k.zsh"
+source "$ZDOTDIR/p10k.zsh"
