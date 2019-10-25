@@ -1,4 +1,5 @@
 ForwardAgent yes
+RemoteForward ~/.config/gpg/S.gpg-agent ~/.config/gpg/S.gpg-agent
 RemoteForward ~/.config/gpg/S.gpg-agent.ssh /tmp/S.weasel-pageant
 
 Host *
@@ -6,4 +7,4 @@ Host *
     ServerAliveCountMax 2
     IdentityFile ~/.config/ssh/tardis.pub
 
-
+socat UNIX-LISTEN:"$HOME/.config/gpg/S.gpg-agent,fork" EXEC:'/c/Users/cesar/bin/npiperelay.exe -ei -ep -s -a "C:/Users/cesar/AppData/Roaming/gnupg/S.gpg-agent"',nofork
