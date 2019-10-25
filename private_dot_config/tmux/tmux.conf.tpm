@@ -15,5 +15,13 @@ set -g @tpm_plugins '          \
 # set -g @plugin 'git@github.com/user/plugin'
 # set -g @plugin 'git@bitbucket.com/user/plugin'
 
+# Copy to OS
+set -g @yank_selection 'primary'
+set -g @yank_selection_mouse 'primary'
+set -g @yank_action 'copy-pipe-and-cancel'
+set -g @fingers-compact-hints 0
+set -g @fingers-copy-command 'clip.exe'
+set -g @override_copy_command 'clip.exe'
+
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '"${HOME}"/lib/tpm/tpm'

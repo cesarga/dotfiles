@@ -5,19 +5,7 @@ fi
 
 source "${ZPLGM[BIN_DIR]}/zplugin.zsh"
 
-setopt promptsubst
-
-# Autosuggestions & fast-syntax-highlighting
-zplugin ice wait"1" lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
-zplugin light zdharma/fast-syntax-highlighting
-# zsh-autosuggestions
-zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
-zplugin load zsh-users/zsh-autosuggestions
-
 zplugin load zdharma/history-search-multi-word
-
-zplugin ice depth=1
-zplugin light romkatv/powerlevel10k
 
 zplugin ice from"gh-r" as"program"
 zplugin load junegunn/fzf-bin
@@ -49,7 +37,11 @@ zplugin snippet OMZ::plugins/git/git.plugin.zsh
 
 zplugin snippet OMZ::plugins/git-flow/git-flow.plugin.zsh
 
-zplugin snippet OMZ::plugins/sudo/sudo.plugin.zsh
+zplugin snippet OMZ::plugins/encode64/encode64.plugin.zsh
+
+zplugin snippet OMZ::plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+
+zplugin snippet https://github.com/changyuheng/zsh-interactive-cd/blob/master/zsh-interactive-cd.plugin.zsh
 
 zplugin snippet "${XDG_CONFIG_HOME}/tmux/tmux.plugin.zsh"
 
@@ -67,3 +59,15 @@ zplugin snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh
 
 zplugin ice wait lucid blockf atpull'zplugin creinstall -q .'
 zplugin light zsh-users/zsh-completions
+
+# zsh-autosuggestions
+zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
+zplugin load zsh-users/zsh-autosuggestions
+
+# fast-syntax-highlighting
+zplugin ice wait"1" lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
+zplugin light zdharma/fast-syntax-highlighting
+
+setopt promptsubst
+zplugin ice depth=1
+zplugin light romkatv/powerlevel10k

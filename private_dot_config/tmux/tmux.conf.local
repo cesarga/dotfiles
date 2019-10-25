@@ -34,7 +34,7 @@ tmux_conf_new_pane_reconnect_ssh=false
 # prompt for session name when creating a new session, possible values are:
 #   - true
 #   - false (default)
-tmux_conf_new_session_prompt=false
+tmux_conf_new_session_prompt=true
 
 
 # -- display -------------------------------------------------------------------
@@ -42,7 +42,7 @@ tmux_conf_new_session_prompt=false
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
-tmux_conf_theme_24b_colour=false
+tmux_conf_theme_24b_colour=true
 
 # window style
 tmux_conf_theme_window_fg='default'
@@ -275,7 +275,7 @@ tmux_conf_copy_to_os_clipboard=false
 # this is the place to override or undo settings
 
 # increase history size
-set -g history-limit 10000
+#set -g history-limit 10000
 
 # start with mouse mode enabled
 #set -g mouse on
@@ -299,8 +299,7 @@ set -g status-position bottom
 set-option -g default-shell /usr/bin/zsh
 
 # Keep unattached sessions
-set-option -g destroy-unattached off
-
+#set-option -g destroy-unattached off
 
 # List of plugins
 #set -g @plugin 'tmux-plugins/tpm'
@@ -309,14 +308,6 @@ set-option -g destroy-unattached off
 #set -g @plugin 'tmux-plugins/tmux-yank'
 
 #set-environment -g PATH "/usr/local/bin:/bin:/usr/bin:$PATH"
-
-# Copy to OS
-set -g @yank_selection 'primary'
-set -g @yank_selection_mouse 'primary'
-set -g @yank_action 'copy-pipe-and-cancel'
-set -g @fingers-compact-hints 0
-set -g @fingers-copy-command 'clip.exe'
-set -g @override_copy_command 'clip.exe'
 
 #unbind detach
 unbind-key -T prefix d
