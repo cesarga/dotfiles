@@ -53,8 +53,9 @@ compdef -d mcd
 #bindkey '^[[3~' delete-char
 #bindkey '^?' backward-delete-char
 
-bindkey '\e[A' history-substring-search-up
-bindkey '\e[B' history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 
 # Initialization scripts
 typeset -U init_files
