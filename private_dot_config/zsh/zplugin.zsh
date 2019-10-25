@@ -42,7 +42,7 @@ zplugin snippet OMZ::plugins/encode64/encode64.plugin.zsh
 zplugin snippet OMZ::lib/history.zsh
 zplugin snippet OMZ::plugins/history-substring-search/history-substring-search.plugin.zsh
 
-zplugin snippet OMZ::lib/key-bindings.zsh
+#zplugin snippet OMZ::lib/key-bindings.zsh
 
 zplugin snippet https://github.com/changyuheng/zsh-interactive-cd/blob/master/zsh-interactive-cd.plugin.zsh
 
