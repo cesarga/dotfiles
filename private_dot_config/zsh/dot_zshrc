@@ -19,14 +19,6 @@ export DISABLE_UNTRACKED_FILES_DIRTY="true"
 #   source $file
 # done
 
-# Source environment variables
-typeset -U env_var_files
-env_var_files=($XDG_CONFIG_HOME/**/env.zsh)
-for file in ${(M)env_var_files}
-do
-  source $file
-done
-
 [[ -f "$ZDOTDIR/prompt.zsh" ]] && source "$ZDOTDIR/prompt.zsh"
 [[ -f "$ZDOTDIR/zplugin.zsh" ]] && source "$ZDOTDIR/zplugin.zsh"
 

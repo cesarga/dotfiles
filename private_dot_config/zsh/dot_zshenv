@@ -35,3 +35,10 @@ export ZPFX="${XDG_CACHE_HOME}/zsh/polaris"
 # z
 export _Z_DATA="$XDG_CACHE_HOME/zsh/.z"
 
+# Source all environment variables
+typeset -U env_var_files
+env_var_files=($XDG_CONFIG_HOME/**/env.zsh)
+for file in ${(M)env_var_files}
+do
+  source $file
+done
