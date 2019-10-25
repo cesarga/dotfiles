@@ -48,7 +48,9 @@ zplugin light docker/compose
 zplugin ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh"
 zplugin load trapd00r/LS_COLORS
 
-zplug "hlissner/zsh-autopair", defer:2
+# zsh-autopair
+zplugin ice wait lucid
+zplugin load hlissner/zsh-autopair
 
 zplugin snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 zplugin snippet OMZ::plugins/common-aliases/common-aliases.plugin.zsh
