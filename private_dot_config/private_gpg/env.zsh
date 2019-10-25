@@ -1,3 +1,2 @@
-#export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-#gpg --homedir "$GNUPGHOME"
-GNUPGHOME=/c/Users/cesar/AppData/Roaming/gnupg
+export GNUPGHOME="$XDG_CONFIG_HOME/gpg"
+gpg --homedir "$GNUPGHOME"
