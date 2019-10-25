@@ -3,7 +3,7 @@
 # See https://justyn.io/blog/using-a-yubikey-for-gpg-in-windows-10-wsl-windows-subsystem-for-linux/ for details
 
 GPGDIR="${GNUPGHOME}"
-USERNAME=cesar
+USERNAME=Cesar
 # I use the same username for wsl and windows, but feel free to modify the paths below if that isn't the case
 WIN_GPGDIR="C:/Users/${USERNAME}/AppData/Roaming/gnupg"
 #NPIPERELAY="/c/Users/${USERNAME}/bin/npiperelay.exe"
@@ -22,8 +22,7 @@ rm -f "${GPGDIR}/S.gpg-agent*"
 echo $$ > ${PIDFILE}
 
 # Relay the regular gpg-agent socket for gpg operations
-socat UNIX-LISTEN:"${GPGDIR}/S.gpg-agent,fork" EXEC:"${NPIPERELAY} -ep -ei -s -a '${WIN_GPGDIR}/S.gpg-agent'",nofork &
-AGENTPID=$!
+(exec socat UNIX-LISTEN:"$GNUPHOME/S.gpg-agent,fork" EXEC:"npiperelay.exe -ep -ei -s 'C:/Users/Cesar/AppData/Roaming/gnupg/S.gpg-agent'",nofork &)
 
 # Relay the gpg ssh-agent
 #socat UNIX-LISTEN:"${GPGDIR}/S.gpg-agent.ssh,fork" EXEC:"${NPIPERELAY} -ep -ei -s -a '${WIN_GPGDIR}/S.gpg-agent.ssh'",nofork &
