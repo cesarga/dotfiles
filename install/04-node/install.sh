@@ -35,8 +35,8 @@ if exists-exec 'yarn'; then
   __yarn_ensure-installed 'gh-pages'
   __yarn_ensure-installed 'gulp'
   __yarn_ensure-installed 'korkut'
-  __yarn_ensure-installed 'qoa'
+#  __yarn_ensure-installed 'qoa'
   __yarn_ensure-installed 'shuji'
   __yarn_ensure-installed 'taskbook'
-#  __yarn_ensure-installed 'yo'
+  __yarn_ensure-installed 'yo'
 fi
