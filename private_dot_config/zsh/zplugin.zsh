@@ -39,7 +39,7 @@ zplugin snippet OMZ::plugins/git-flow/git-flow.plugin.zsh
 
 zplugin snippet OMZ::plugins/encode64/encode64.plugin.zsh
 
-zplugin snippet OMZ::plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+zplugin snippet OMZ::plugins/history-substring-search/history-substring-search.plugin.zsh
 
 zplugin snippet https://github.com/changyuheng/zsh-interactive-cd/blob/master/zsh-interactive-cd.plugin.zsh
 
