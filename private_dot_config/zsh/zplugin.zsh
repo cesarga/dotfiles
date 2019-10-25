@@ -55,19 +55,21 @@ zplugin light docker/compose
 zplugin ice as"completion"
 zplugin snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
-zplugin ice wait lucid blockf atpull'zplugin creinstall -q .'
-zplugin light zsh-users/zsh-completions
+zplugin load zsh/terminfo
 
 # zsh-autosuggestions
 #zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
 #zplugin load zsh-users/zsh-autosuggestions
 
 # fast-syntax-highlighting
-zplugin ice wait"1" lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
+#zplugin ice wait"1" lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
 
-zplugin ice wait"0"
-zplugin snippet OMZ::plugins/history-substring-search/history-substring-search.plugin.zsh
+#zplugin ice wait"1"
+zplugin load zsh-users/zsh-history-substring-search
+
+zplugin ice wait lucid blockf atpull'zplugin creinstall -q .'
+zplugin light zsh-users/zsh-completions
 
 setopt promptsubst
 zplugin ice depth=1
