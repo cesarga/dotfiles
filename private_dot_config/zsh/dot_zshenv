@@ -42,3 +42,6 @@ for file in ${(M)env_var_files}
 do
   source $file
 done
+
+# oh-my-zsh
+ZSH_DISABLE_COMPFIX=true
