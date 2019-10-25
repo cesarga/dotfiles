@@ -8,14 +8,17 @@ autoload -Uz _zplugin
 # Autosuggestions & fast-syntax-highlighting
 zplugin ice wait"1" lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
+
 # zsh-autosuggestions
 #zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
 #zplugin load zsh-users/zsh-autosuggestions
 
 zplugin load zdharma/history-search-multi-word
 
-zplugin ice depth=1
-zplugin light romkatv/powerlevel10k
+# prompt
+#zplugin ice depth=1
+#zplugin light romkatv/powerlevel10k
+zplugin light denysdovhan/spaceship-prompt
 
 # fzf
 zplugin ice from"gh-r" as"program"

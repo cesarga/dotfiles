@@ -630,3 +630,11 @@ fi
 
 (( ! p9k_classic_restore_aliases )) || setopt aliases
 'builtin' 'unset' 'p9k_classic_restore_aliases'
+
+
+#
+# Custom
+#
+
+# Disable prompt wizard
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
