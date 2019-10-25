@@ -39,11 +39,6 @@ zplugin snippet OMZ::plugins/git-flow/git-flow.plugin.zsh
 
 zplugin snippet OMZ::plugins/encode64/encode64.plugin.zsh
 
-zplugin snippet OMZ::lib/history.zsh
-zplugin snippet OMZ::plugins/history-substring-search/history-substring-search.plugin.zsh
-
-#zplugin snippet OMZ::lib/key-bindings.zsh
-
 zplugin snippet https://github.com/changyuheng/zsh-interactive-cd/blob/master/zsh-interactive-cd.plugin.zsh
 
 zplugin snippet "${XDG_CONFIG_HOME}/tmux/tmux.plugin.zsh"
@@ -64,12 +59,15 @@ zplugin ice wait lucid blockf atpull'zplugin creinstall -q .'
 zplugin light zsh-users/zsh-completions
 
 # zsh-autosuggestions
-zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
-zplugin load zsh-users/zsh-autosuggestions
+#zplugin ice wait"1" lucid atload"!_zsh_autosuggest_start"
+#zplugin load zsh-users/zsh-autosuggestions
 
 # fast-syntax-highlighting
 zplugin ice wait"1" lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
+
+zplugin ice wait"0"
+zplugin snippet OMZ::plugins/history-substring-search/history-substring-search.plugin.zsh
 
 setopt promptsubst
 zplugin ice depth=1

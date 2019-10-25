@@ -44,6 +44,7 @@ do
 done
 
 # oh-my-zsh
-ZSH_TMUX_AUTOSTART="false"
-DISABLE_AUTO_TITLE="true"
-ZSH_DISABLE_COMPFIX=true
+export ZSH_TMUX_AUTOSTART="false"
+export ZSH_DISABLE_COMPFIX=true
+export DISABLE_AUTO_TITLE="true"
+export DISABLE_UNTRACKED_FILES_DIRTY="true"

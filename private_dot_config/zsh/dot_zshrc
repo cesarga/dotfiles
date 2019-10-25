@@ -1,7 +1,5 @@
 # init faster
 #export skip_global_compinit=1
-export DISABLE_AUTO_UPDATE="true"
-export DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # all of our zsh files
 # typeset -U config_files
@@ -55,15 +53,8 @@ compdef -d mcd
 #bindkey '^[[3~' delete-char
 #bindkey '^?' backward-delete-char
 
-# load antigen
-#export ANTIGEN_AUTO_CONFIG=false
-#typeset -a ANTIGEN_CHECK_FILES=("$ZDOTDIR/.antigenrc" "$ZDOTDIR/.zshrc")
-
-#source "/usr/share/zsh-antigen/antigen.zsh"
-#antigen init "$ZDOTDIR/.antigenrc"
-
-# shortcut to this dotfiles path is $ZSH
-#export ZSH="$ZDOTDIR/bundles/robbyrussell/oh-my-zsh"
+bindkey '\e[A' history-substring-search-up
+bindkey '\e[B' history-substring-search-down
 
 # Initialization scripts
 typeset -U init_files
