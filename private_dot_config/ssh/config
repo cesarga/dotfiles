@@ -1,5 +1,5 @@
 ForwardAgent yes
-RemoteForward /tmp/S.weasel-pageant /tmp/S.weasel-pageant
+RemoteForward ~/.config/gpg/S.gpg-agent.ssh /tmp/S.weasel-pageant
 
 Host *
     ServerAliveInterval 300
