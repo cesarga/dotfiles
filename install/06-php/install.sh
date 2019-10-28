@@ -2,8 +2,6 @@
 
 sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 
-sudo apt-get update
-
 __apt_install-packages <<-EOF
   php7.3
   php7.3-common
