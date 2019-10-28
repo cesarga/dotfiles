@@ -21,7 +21,7 @@ rm -f "$GNUPGHOME/S.gpg-agent*"
 echo $$ > ${PIDFILE}
 
 # Relay the regular gpg-agent socket for gpg operations
-(exec socat UNIX-LISTEN:"$GNUPHOME/S.gpg-agent,fork" EXEC:"npiperelay.exe -ep -ei -s 'C:/Users/Cesar/AppData/Roaming/gnupg/S.gpg-agent'",nofork &)
+exec socat UNIX-LISTEN:"$GNUPHOME/S.gpg-agent,fork" EXEC:"npiperelay.exe -ep -ei -s 'C:/Users/Cesar/AppData/Roaming/gnupg/S.gpg-agent'",nofork &
 
 # Relay the gpg ssh-agent
 socat UNIX-LISTEN:"$GNUPGHOME/S.gpg-agent.ssh,fork" EXEC:"${NPIPERELAY} -ep -ei -s -a '$WIN_GNUPGHOME/S.gpg-agent.ssh'",nofork &
