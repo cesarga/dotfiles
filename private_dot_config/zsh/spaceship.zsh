@@ -1,0 +1,1 @@
+SPACESHIP_VI_MODE_SHOW=false
