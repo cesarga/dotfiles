@@ -1,5 +1,4 @@
 ForwardAgent yes
-RemoteForward ~/.config/gpg/S.gpg-agent ~/.config/gpg/S.gpg-agent
 RemoteForward ~/.config/gpg/S.gpg-agent.ssh /tmp/S.weasel-pageant
 
 Host *
