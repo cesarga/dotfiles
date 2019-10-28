@@ -1,5 +1,6 @@
-#ForwardAgent yes
-#RemoteForward /c/Users/cesar/AppData/Roaming/gnupg/S.gpg-agent.ssh /tmp/S.weasel-pageant
+ForwardAgent yes
+RemoteForward ~/.config/gpg/S.gpg-agent ~/.config/gpg/S.gpg-agent
+RemoteForward ~/.config/gpg/S.gpg-agent.ssh /tmp/S.weasel-pageant
 
 Host *
     ServerAliveInterval 300

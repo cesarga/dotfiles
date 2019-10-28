@@ -5,4 +5,4 @@ __apt_install-packages <<-EOF
 	gnupg-agent
 EOF
 
-gpg --import "$XDG_CONFIG_HOME/ssh/tardis.pub"
+gpg --import "$XDG_CONFIG_HOME/gpg/tardis.asc"
