@@ -12,7 +12,7 @@ __apt-get_updated-at () {
 }
 
 __apt-get_updated-ago () {
-  $(( $(date +%s) - $(__apt-get_updated-at) ))
+  echo $(( $(date +%s) - $(__apt-get_updated-at) ))
 }
 
 __apt-get_needs-update () {
@@ -55,7 +55,7 @@ __nix-channel_updated-at () {
 }
 
 __nix-channel_updated-ago () {
-  $(( $(date +%s) - $(__nix-channel_updated-at) ))
+  echo $(( $(date +%s) - $(__nix-channel_updated-at) ))
 }
 
 __nix-channel_needs-update () {
