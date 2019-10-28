@@ -11,11 +11,6 @@ for file in $(find "${CHEZMOI_SOURCEDIR}/helpers" -type f -name '*.sh' | sort) ;
 done
 
 #
-# Update apt and nix package repositories
-#
-source "${CHEZMOI_INSTALLDIR}/update-repositories.sh"
-
-#
 # Source all install files in alphabetical path order
 #
 for file in $(find "${CHEZMOI_INSTALLDIR}" -type f -name 'install.sh' | sort) ; do

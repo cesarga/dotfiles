@@ -20,6 +20,11 @@ zplugin load zdharma/history-search-multi-word
 #zplugin light romkatv/powerlevel10k
 zplugin light denysdovhan/spaceship-prompt
 
+# direnv
+zplugin ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+    atpull'%atclone' pick"direnv" src"zhook.zsh"
+zplugin light direnv/direnv
+
 # fzf
 zplugin ice from"gh-r" as"program"
 zplugin load junegunn/fzf-bin

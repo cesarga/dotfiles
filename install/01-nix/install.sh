@@ -9,5 +9,5 @@ if noexists-exec 'nix-env'; then
 fi
 
 if noexists-exec 'lsd'; then
-  nix-env -i lsd
+  __nix_install-package lsd
 fi
