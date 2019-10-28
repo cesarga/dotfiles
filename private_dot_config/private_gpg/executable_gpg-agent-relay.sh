@@ -12,15 +12,15 @@ OLDPID=$(cat "$PIDFILE")
 # Launch socat+npiperelay for the regular gpg-agent
 if [[ ! -z "$OLDPID" ]]; then
     ps -p "$OLDPID" >/dev/null && \
-    echo "gpg-agent-relay.sh already running with process id $(cat $PIDFILE)" && \
+    echo "gpg-agent-relay.sh already running with process id $(cat "$PIDFILE")" && \
     exit 0
 fi
 
-rm -f "$GNUPGHOME/S.gpg-agent*"
+rm -f "$GNUPGHOME"/S.gpg-agent*
 echo $$ > ${PIDFILE}
 
 # Relay the regular gpg-agent socket for gpg operations
-(exec socat UNIX-LISTEN:"$GNUPGHOME/S.gpg-agent,fork" EXEC:"npiperelay.exe -ep -ei -s 'C:/Users/Cesar/AppData/Roaming/gnupg/S.gpg-agent'",nofork &)
+(exec socat UNIX-LISTEN:"$GNUPGHOME/S.gpg-agent,fork" EXEC:"${NPIPERELAY} -ep -ei -s 'C:/Users/Cesar/AppData/Roaming/gnupg/S.gpg-agent'",nofork &)
 AGENTPID=$!
 
 # Relay the gpg ssh-agent
