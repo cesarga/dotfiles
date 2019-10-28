@@ -6,5 +6,3 @@ Host *
     ServerAliveInterval 300
     ServerAliveCountMax 2
     IdentityFile ~/.config/ssh/tardis.pub
-
-socat UNIX-LISTEN:"$HOME/.config/gpg/S.gpg-agent,fork" EXEC:'/c/Users/cesar/bin/npiperelay.exe -ei -ep -s -a "C:/Users/cesar/AppData/Roaming/gnupg/S.gpg-agent"',nofork
