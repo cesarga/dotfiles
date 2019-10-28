@@ -5,8 +5,7 @@
 USERNAME=Cesar
 # I use the same username for wsl and windows, but feel free to modify the paths below if that isn't the case
 WIN_GNUPGHOME="C:/Users/$USERNAME/AppData/Roaming/gnupg"
-#NPIPERELAY="/c/Users/${USERNAME}/bin/npiperelay.exe"
-NPIPERELAY="npiperelay.exe"
+NPIPERELAY="/c/Users/${USERNAME}/go/bin/npiperelay.exe"
 PIDFILE="$GNUPGHOME/.gpg-agent-relay.pid"
 OLDPID=$(cat "$PIDFILE")
 
