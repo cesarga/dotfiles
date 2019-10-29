@@ -1,4 +1,10 @@
 if [[ "$(command -v nvim)" ]]; then
-    export VISUAL="$(command -v nvim)"
-    export EDITOR="${VISUAL}"
+  ED="$(command -v nvim)"
+elif [[ "$(command -v vim)" ]]; then
+  ED="$(command -v vim)"
+elif [[ "$(command -v nano)" ]]; then
+  ED="$(command -v nano)"
 fi
+
+export VISUAL="${ED}"
+export EDITOR="$VISUAL"
