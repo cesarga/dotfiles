@@ -329,4 +329,4 @@ setw -g automatic-rename off
 
 
 # source tpm configuration
-if '[ -f ~/.tmux.conf.tpm ]' 'source ~/.tmux.conf.tpm'
+if '[ -f ~/.config/tmux/tmux.conf.tpm ]' 'source ~/.config/tmux/tmux.conf.tpm'
