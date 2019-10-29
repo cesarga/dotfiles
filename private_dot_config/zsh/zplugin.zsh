@@ -16,9 +16,9 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin load zdharma/history-search-multi-word
 
 # prompt
-#zplugin ice depth=1
-#zplugin light romkatv/powerlevel10k
-zplugin light denysdovhan/spaceship-prompt
+zplugin ice depth=1
+zplugin light romkatv/powerlevel10k
+#zplugin light denysdovhan/spaceship-prompt
 
 # direnv
 zplugin ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \

@@ -9,8 +9,8 @@ colors
 source "$ZDOTDIR/options.zsh"
 
 # prompt options
-#source "$ZDOTDIR/p10k.zsh"
-source "$ZDOTDIR/spaceship.zsh"
+source "$ZDOTDIR/p10k.zsh"
+#source "$ZDOTDIR/spaceship.zsh"
 
 # zplugin
 source "$ZDOTDIR/zplugin.zsh"
