@@ -3,6 +3,9 @@ alias reload='exec "$SHELL" -l'
 
 alias cls='clear'
 
+# please is a "sudo !!" alias
+alias please='sudo $(fc -ln -1)'
+
 alias ls='lsd -F --group-dirs first --size short'
 alias la='lsd -lAhFr --group-dirs first --size short'
 alias l='la --blocks permission,user,size,name'

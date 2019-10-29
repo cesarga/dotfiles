@@ -299,7 +299,7 @@ set -g status-position bottom
 set-option -g default-shell /usr/bin/zsh
 
 # Keep unattached sessions
-#set-option -g destroy-unattached off
+set-option -g destroy-unattached off
 
 # List of plugins
 #set -g @plugin 'tmux-plugins/tpm'
