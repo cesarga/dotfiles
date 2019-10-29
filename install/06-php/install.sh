@@ -4,7 +4,7 @@ if noexists-exec 'php'; then
   if [[ ! $(apt-cache policy | grep ondrej/php) ]]; then
     sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
   fi
-  
+
   __apt_install-packages <<-EOF
 		php7.3
 		php7.3-common
