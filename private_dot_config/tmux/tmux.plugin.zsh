@@ -17,7 +17,7 @@ alias tkss='tmux kill-session -t'
 
 
 if [[ -z "$TMUX" ]]; then
-    tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" start-server
+    #tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" start-server
 
     if ! tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" has-session 2> /dev/null; then
         exec tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" new-session -d
