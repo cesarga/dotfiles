@@ -20,9 +20,9 @@ if [[ -z "$TMUX" ]]; then
     tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" start-server
 
     if ! tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" has-session 2> /dev/null; then
-        exec tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" new-session
+        exec tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" new-session -d
     else
-        exec tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" attach-session
+        exec tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" attach-session -d
     fi
 fi
 
