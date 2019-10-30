@@ -1,0 +1,14 @@
+[[snippets]]
+  description = "Encrypt a file with a password, using openssl"
+  command = "openssl enc -in \"${FILE}\" -aes-256-cbc -pass stdin > \"${FILE}.enc\""
+  output = ""
+
+[[snippets]]
+  description = "Decrypt a password encrypted file, using openssl"
+  command = "openssl enc -in \"${FILE}.enc\" -d -aes-256-cbc -pass stdin > \"${FILE}.dec\""
+  output = ""
+
+[[snippets]]
+  description = "Set python (or python3) bin to use the provided version"
+  command = "sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1"
+  output = ""

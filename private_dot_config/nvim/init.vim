@@ -1,8 +1,4 @@
-:nmap º :
+set runtimepath^=~/.config/vim runtimepath+=~/.config/vim/after
+let &packpath = &runtimepath
+source ~/.config/vimrc
 
-syntax on
-
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
-
-set pastetoggle=<F2>
