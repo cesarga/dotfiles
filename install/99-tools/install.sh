@@ -34,7 +34,7 @@ if noexists-exec 'dry'; then
   sudo chmod 755 /usr/local/bin/dry
 fi
 
-# whatfee
+# wharfee
 # wego
 # taskbook
 # saws
@@ -56,3 +56,14 @@ fi
 # s4cmd
 # speedtest-cli
 # yq
+# ripgrep
+# mdcat
+# carbon
+# gcalcli
+# jrnl
+# transfer.sh
+# tre
+# the_platinum_searcher
+# figlet
+# pv
+# pdd
