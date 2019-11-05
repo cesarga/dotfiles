@@ -34,6 +34,10 @@ if noexists-exec 'dry'; then
   sudo chmod 755 /usr/local/bin/dry
 fi
 
+if noexists-exec 'ansible'; then
+  pip install --user ansible
+fi
+
 # wharfee
 # wego
 # taskbook
@@ -46,7 +50,6 @@ fi
 # ddns
 # composer
 # aws
-# ansible
 # virtualenv python
 # ffmpeg
 # gflow

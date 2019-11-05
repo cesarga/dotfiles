@@ -4,9 +4,14 @@ if noexists-exec 'python3'; then
   __apt_install-packages <<-EOF
 		python3
 		python3-pip
+		python3-venv
 		python3-apt
 		python3-setuptools
 	EOF
+fi
+
+if noexists-exec 'pipenv'; then
+  pip install --user pipenv
 fi
 
 #VERSION='3.6'
