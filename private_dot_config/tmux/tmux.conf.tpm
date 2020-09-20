@@ -24,5 +24,4 @@ set -g @fingers-copy-command 'clip.exe'
 set -g @override_copy_command 'clip.exe'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-# run -b '"$HOME"/libs/tpm/tpm'
-run "$XDG_CONFIG_HOME/tmux/tpm/tpm"
+run -b '"$HOME"/libs/tpm/tpm'
