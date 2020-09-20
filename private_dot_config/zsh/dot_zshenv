@@ -1,0 +1,41 @@
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+umask 22
+
+# X11
+export DISPLAY=:0
+
+# Ensure languages are set
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# This fixes using SSH in urxvt
+if [[ "${TERM}" == 'rxvt-unicode' ]] ; then
+    export TERM='xterm'
+fi
+
+# Term for WSL
+if [[ "$(uname -r)" == *_"Microsoft"_* ]] ; then
+    export TERM="xterm-256color"
+fi
+
+# history
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE="$XDG_CACHE_HOME/zsh/.zsh_history"
+
+# zinit
+export ZINIT_HOME="${ZDOTDIR}/zinit"
+export ZINIT_BIN_DIR_NAME="${ZINIT_HOME}/bin"
+
+# enable colored output from ls, etc. on FreeBSD-based systems
+export CLICOLOR=1
+
+# Source all environment variables
+typeset -U env_var_files
+env_var_files=($XDG_CONFIG_HOME/**/env.zsh)
+for file in ${(M)env_var_files}
+do
+  source $file
+done

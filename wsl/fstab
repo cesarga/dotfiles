@@ -1,0 +1,2 @@
+LABEL=cloudimg-rootfs   /   ext4    defaults    0   0
+#Z:\.wsl2    /wsl2   drvfs   defaults    0   0

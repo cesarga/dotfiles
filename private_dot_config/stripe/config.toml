@@ -1,0 +1,4 @@
+
+[default]
+  device_name = "DOCTOR"
+  test_mode_api_key = ""

@@ -1,0 +1,20 @@
+# zsh options
+source "$ZDOTDIR/options.zsh"
+
+# aliases
+typeset -U aliases_files
+aliases_files=($XDG_CONFIG_HOME/**/aliases.zsh)
+for file in ${(M)aliases_files}
+do
+  source $file
+done
+
+# Initialization scripts
+typeset -U init_files
+init_files=($XDG_CONFIG_HOME/**/init.zsh)
+for file in ${(M)init_files}
+do
+  source $file
+done
+
+source "$ZDOTDIR/zgen.zsh"

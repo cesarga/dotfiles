@@ -1,0 +1,9 @@
+[submodule "bash-oo-framework"]
+	path = bash-oo-framework
+	url = https://github.com/niieani/bash-oo-framework
+[submodule "bashful"]
+	path = bashful
+	url = https://github.com/jmcantrell/bashful
+[submodule "private_dot_config/zsh/zgen"]
+	path = private_dot_config/zsh/zgen
+	url = https://github.com/tarjoilija/zgen.git

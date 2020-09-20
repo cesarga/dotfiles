@@ -1,0 +1,27 @@
+# -- user customizations -------------------------------------------------------
+
+# List of plugins
+set -g @tpm_plugins '          \
+  tmux-plugins/tpm             \
+  tmux-plugins/tmux-sensible   \
+  tmux-plugins/tmux-resurrect  \
+  tmux-plugins/tmux-fpp        \
+  Morantron/tmux-fingers       \
+  tmux-plugins/tmux-yank       \
+'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# Copy to OS
+set -g @yank_selection 'primary'
+set -g @yank_selection_mouse 'primary'
+set -g @yank_action 'copy-pipe-and-cancel'
+set -g @fingers-compact-hints 0
+set -g @fingers-copy-command 'clip.exe'
+set -g @override_copy_command 'clip.exe'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '"$HOME"/libs/tpm/tpm'

@@ -1,0 +1,85 @@
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+umask 22
+
+# X11
+export DISPLAY=:0
+
+# Ensure languages are set
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# This fixes using SSH in urxvt
+if [[ "${TERM}" == 'rxvt-unicode' ]] ; then
+    export TERM='xterm'
+fi
+
+# Term for WSL
+if [[ "$(uname -r)" == *_"Microsoft"_* ]] ; then
+    export TERM="xterm-256color"
+fi
+
+# history
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE="$XDG_CACHE_HOME/zsh/.zsh_history"
+
+# zinit
+export ZINIT_HOME="${ZDOTDIR}/zinit"
+export ZINIT_BIN_DIR_NAME="${ZINIT_HOME}/bin"
+
+# zplugin
+declare -A ZPLGM
+export ZPLGM[HOME_DIR]="${HOME}/libs/zplugin"
+export ZPLGM[BIN_DIR]="${ZPLGM[HOME_DIR]}/bin"
+export ZPLGM[PLUGINS_DIR]="${ZPLGM[HOME_DIR]}/plugins"
+export ZPLGM[COMPLETIONS_DIR]="${ZPLGM[HOME_DIR]}//root_completions"
+export ZPLGM[SNIPPETS_DIR]="${ZPLGM[HOME_DIR]}/snippets"
+export ZPLGM[ZCOMPDUMP_PATH]="${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
+export ZPLGM[COMPINIT_OPTS]='-C'
+export ZPLGM[MUTE_WARNINGS]=
+export ZPFX="${XDG_CACHE_HOME}/zsh/polaris"
+
+# oh-my-zsh
+export ZSH_TMUX_AUTOSTART="false"
+export ZSH_DISABLE_COMPFIX=true
+export DISABLE_AUTO_TITLE="true"
+export DISABLE_AUTO_UPDATE="true"
+export DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# z
+export _Z_DATA="$XDG_CACHE_HOME/zsh/.z"
+
+# fzf
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_ALT_C_COMMAND='rg --hidden --sort-files --files --null 2> /dev/null | xargs -0 dirname | uniq'
+
+export FZF_COMPLETION_TRIGGER='ññ'
+export FZF_COMPLETION_OPTS='+c -x'
+
+export FZF_TMUX=1;
+export FZF_TMUX_HEIGHT='50%'
+
+# zsh syntax highliter
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# zsh autosuggest
+typeset -ga ZSH_AUTOSUGGEST_EXECUTE_WIDGETS
+export ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(
+  end-of-line
+  vi-forward-char
+  vi-end-of-line
+  vi-add-eol
+)
+
+# enable colored output from ls, etc. on FreeBSD-based systems
+export CLICOLOR=1
+
+# Source all environment variables
+typeset -U env_var_files
+env_var_files=($XDG_CONFIG_HOME/**/env.zsh)
+for file in ${(M)env_var_files}
+do
+  source $file
+done
