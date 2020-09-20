@@ -1,3 +1,4 @@
 if [[ "$(command -v javac)" ]]; then
-  export JAVA_HOME="$(dirname "$(dirname "$(realpath "$(command -v javac)")")")"
+  JAVA_HOME="$(dirname "$(dirname "$(realpath "$(command -v javac)")")")"
+  export JAVA_HOME
 fi

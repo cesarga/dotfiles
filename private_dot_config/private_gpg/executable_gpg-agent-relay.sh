@@ -17,7 +17,7 @@ if [[ ! -z "$OLDPID" ]]; then
 fi
 
 rm -f "$GNUPGHOME"/S.gpg-agent*
-echo $$ > ${PIDFILE}
+echo $$ > "${PIDFILE}"
 
 # Relay the regular gpg-agent socket for gpg operations
 (exec socat UNIX-LISTEN:"$GNUPGHOME/S.gpg-agent,fork" EXEC:"${NPIPERELAY} -ep -ei -s '$WIN_GNUPGHOME/S.gpg-agent'",nofork &)

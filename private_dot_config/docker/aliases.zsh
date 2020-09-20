@@ -7,7 +7,7 @@ alias de='dc exec'
 
 deb() {
   if [[ $# -ne 1 ]]; then
-    echo "Usage: "$FUNCNAME" CONTAINER_ID"
+    echo "Usage: $FUNCNAME CONTAINER_ID"
     return 1
   fi
 

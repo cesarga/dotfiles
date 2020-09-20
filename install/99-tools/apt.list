@@ -1,6 +1,11 @@
 ack-grep
 agrep
 aria2
+asciinema
+bat
+direnv
+fd-find
+fzf
 htop
 httpie
 imagemagick

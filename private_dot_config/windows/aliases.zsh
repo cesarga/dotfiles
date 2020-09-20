@@ -3,8 +3,11 @@
 #
 
 winmount() {
-  local MNT_DRIVE="$(echo "$1" | awk '{print toupper($0)}'):"
-  local MNT_DIR="/$(echo "$1" | awk '{print tolower($0)}')"
+  local MNT_DRIVE;
+  local MNT_DIR;
+
+  MNT_DRIVE="$(echo "$1" | awk '{print toupper($0)}'):"
+  MNT_DIR="/$(echo "$1" | awk '{print tolower($0)}')"
 
   sudo umount "$MNT_DIR" >/dev/null 2>&1
   sudo mount -t drvfs "$MNT_DRIVE" "$MNT_DIR"
@@ -16,7 +19,8 @@ winmount() {
 #
 
 phpstorm() {
-  local $PHPSTORM=$(find '/c/Users/cesar/AppData/Local/JetBrains/Toolbox/apps/PhpStorm/ch-0' -type f -name phpstorm64.exe | tail -1)
+  local PHPSTORM;
+  PHPSTORM=$(find '/c/Users/cesar/AppData/Local/JetBrains/Toolbox/apps/PhpStorm/ch-0' -type f -name phpstorm64.exe | tail -1)
 
   $PHPSTORM "$(wslpath -w "$@")"
 }
@@ -29,13 +33,14 @@ alias code='phpstorm'
 #
 
 opus() {
-  local $OPUS='/c/Program Files/GPSoftware/Directory Opus/dopus.exe'
+  local OPUS
   local TARGET
+  OPUS='/c/Program Files/GPSoftware/Directory Opus/dopus.exe'
 
-  if [[ "$@" == '.' ]]; then
+  if [[ "$*" == '.' ]]; then
     TARGET="$(pwd)"
   else
-    TARGET="$@"
+    TARGET="$*"
   fi
 
   "$OPUS" /cmd Go "$(wslpath -w "$TARGET")"

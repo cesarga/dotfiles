@@ -17,12 +17,8 @@ sudo mount -o bind /z/dev/projects/dotfiles/ubuntu-20.04/ "$HOME/.local/share/ch
 #chezmoi import --strip-components 1 --destination "$HOME/libs/weasel-pageant" /tmp/weasel-pageant-1.4.tar.gz
 
 # tpm
-#curl -s -L -o /tmp/tpm-master.tar.gz https://github.com/tmux-plugins/tpm/archive/master.tar.gz
-#chezmoi import --strip-components 1 --destination "$HOME/libs/tpm" /tmp/tpm-master.tar.gz
-
-# zplugin
-#curl -s -L -o /tmp/zplugin-v2.3.tar.gz https://github.com/zdharma/zplugin/archive/v2.3.tar.gz
-#chezmoi import --strip-components 1 --destination "$HOME/libs/zplugin/bin" /tmp/zplugin-v2.3.tar.gz
+curl -s -L -o /tmp/tpm-master.tar.gz https://github.com/tmux-plugins/tpm/archive/master.tar.gz
+chezmoi import --strip-components 1 --destination "$HOME/libs/tpm" /tmp/tpm-master.tar.gz
 
 
 chezmoi apply

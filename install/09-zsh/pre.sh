@@ -8,12 +8,11 @@ if ! grep -qs XDG /etc/zsh/zshenv; then
 
 cat <<-EOF | sudo tee /etc/zsh/zshenv
 		# Path
-		export PATH="\${HOME}/bin:/usr/local/bin:/usr/bin/:/bin:\${PATH}"
+		export PATH="\${HOME}/bin:/usr/local/bin:/usr/bin:/bin:\${PATH}"
 
 		# XDG base directories
 		export XDG_DATA_HOME="\${HOME}/.local/share"
 		export XDG_CONFIG_HOME="\${HOME}/.config"
-		export XDG_CACHE_HOME="\${HOME}/.cache"
 		export XDG_CACHE_HOME="\${HOME}/.cache"
 		export XDG_RUNTIME_DIR=
 

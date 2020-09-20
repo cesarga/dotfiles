@@ -25,9 +25,30 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE="$XDG_CACHE_HOME/zsh/.zsh_history"
 
-# zinit
-export ZINIT_HOME="${ZDOTDIR}/zinit"
-export ZINIT_BIN_DIR_NAME="${ZINIT_HOME}/bin"
+# z
+export _Z_DATA="$XDG_CACHE_HOME/zsh/.z"
+
+# fzf
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_ALT_C_COMMAND='rg --hidden --sort-files --files --null 2> /dev/null | xargs -0 dirname | uniq'
+
+export FZF_COMPLETION_TRIGGER='ññ'
+export FZF_COMPLETION_OPTS='+c -x'
+
+export FZF_TMUX=1;
+export FZF_TMUX_HEIGHT='50%'
+
+# zsh syntax highliter
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# zsh autosuggest
+typeset -ga ZSH_AUTOSUGGEST_EXECUTE_WIDGETS
+export ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(
+  end-of-line
+  vi-forward-char
+  vi-end-of-line
+  vi-add-eol
+)
 
 # enable colored output from ls, etc. on FreeBSD-based systems
 export CLICOLOR=1

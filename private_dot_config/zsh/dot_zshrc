@@ -1,6 +1,14 @@
 # zsh options
 source "$ZDOTDIR/options.zsh"
 
+mkdir -p "$(dirname $HISTFILE)"
+
+# prompt options
+source "$ZDOTDIR/.p10k.zsh"
+
+# zgen
+source "$ZDOTDIR/zgen.zsh"
+
 # aliases
 typeset -U aliases_files
 aliases_files=($XDG_CONFIG_HOME/**/aliases.zsh)
@@ -17,4 +25,6 @@ do
   source $file
 done
 
-source "$ZDOTDIR/zgen.zsh"
+## initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
