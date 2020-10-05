@@ -1,3 +1,2 @@
-#if [[ ! -S "$GNUPGHOME/S.gpg-agent" ]]; then
-#  (exec socat UNIX-LISTEN:"$GNUPGHOME/S.gpg-agent,fork" EXEC:"C:/Users/cesar/go/bin/npiperelay.exe -ep -ei -s 'C:/Users/cesar/AppData/Roaming/gnupg/S.gpg-agent'",nofork &)
-#fi
+socat UNIX-LISTEN:/tmp/wincrypt-hv.sock,fork,mode=777 SOCKET-CONNECT:40:0:x0000x33332222x02000000x00000000,forever,interval=5 &
+export SSH_AUTH_SOCK=/tmp/wincrypt-hv.sock
