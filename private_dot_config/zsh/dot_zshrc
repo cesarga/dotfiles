@@ -1,15 +1,15 @@
-# zsh options
+## zsh options
 source "$ZDOTDIR/options.zsh"
 
 mkdir -p "$(dirname $HISTFILE)"
 
-# prompt options
+## prompt options
 source "$ZDOTDIR/.p10k.zsh"
 
-# zgen
+## zgen
 source "$ZDOTDIR/zgen.zsh"
 
-# aliases
+## aliases
 typeset -U aliases_files
 aliases_files=($XDG_CONFIG_HOME/**/aliases.zsh)
 for file in ${(M)aliases_files}
@@ -17,10 +17,18 @@ do
   source $file
 done
 
-# Initialization scripts
+## initialization scripts
 typeset -U init_files
 init_files=($XDG_CONFIG_HOME/**/init.zsh)
 for file in ${(M)init_files}
+do
+  source $file
+done
+
+## completion
+typeset -U completion_files
+completion_files=($XDG_CONFIG_HOME/**/completion.zsh)
+for file in ${(M)completion_files}
 do
   source $file
 done
