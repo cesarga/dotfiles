@@ -7,6 +7,7 @@ curl
 daemonize
 dbus
 dbus-x11
+ldnsutils
 gnupg-agent
 lsb-release
 make

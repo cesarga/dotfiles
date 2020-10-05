@@ -5,7 +5,7 @@
 set -ex
 
 if [[ ! "$(command -v chezmoi)" ]]; then
-    curl -sfL https://git.io/chezmoi | sudo BINDIR=/usr/local/bin sh
+  curl -sfL https://git.io/chezmoi | sudo BINDIR=/usr/local/bin sh
 fi
 
 #chezmoi init https://github.com/cesarga/dotfiles.git
@@ -17,8 +17,7 @@ sudo mount -o bind /z/dev/projects/dotfiles/ubuntu-20.04/ "$HOME/.local/share/ch
 #chezmoi import --strip-components 1 --destination "$HOME/libs/weasel-pageant" /tmp/weasel-pageant-1.4.tar.gz
 
 # tpm
-curl -s -L -o /tmp/tpm-master.tar.gz https://github.com/tmux-plugins/tpm/archive/master.tar.gz
-chezmoi import --strip-components 1 --destination "$HOME/libs/tpm" /tmp/tpm-master.tar.gz
-
+#curl -s -L -o /tmp/tpm-master.tar.gz https://github.com/tmux-plugins/tpm/archive/master.tar.gz
+#chezmoi import --strip-components 1 --destination "$HOME/libs/tpm"  /tmp/tpm-master.tar.gz
 
 chezmoi apply
