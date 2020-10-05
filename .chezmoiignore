@@ -5,12 +5,12 @@
 /.gitmodules
 
 /assets/
-/bootstrap/
 /bash-oo-framework/
 /install/
 /windows/
 /wsl/
 *.old/
+/bootstrap.*
 
 /private_dot_config/chezmoi/chezmoi.yaml
 
