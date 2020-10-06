@@ -21,8 +21,8 @@ if [[ "$(uname -r)" == *_"Microsoft"_* ]] ; then
 fi
 
 # history
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=20000
+export SAVEHIST=20000
 export HISTFILE="$XDG_CACHE_HOME/zsh/.zsh_history"
 
 # z
