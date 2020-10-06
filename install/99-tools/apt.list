@@ -5,7 +5,6 @@ asciinema
 bat
 direnv
 fd-find
-fzf
 htop
 httpie
 imagemagick

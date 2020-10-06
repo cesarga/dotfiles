@@ -23,8 +23,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/git-flow
   zgen oh-my-zsh plugins/encode64
-
-  zgen load changyuheng/zsh-interactive-cd
+  zgen oh-my-zsh plugins/zsh-interactive-cd
 
   zgen load "${XDG_CONFIG_HOME}/tmux/tmux.plugin.zsh"
 

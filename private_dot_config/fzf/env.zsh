@@ -34,4 +34,3 @@ export FZF_COMPLETION_OPTS='+c -x'
 
 export FZF_TMUX=1;
 export FZF_TMUX_HEIGHT='50%'
-#export FZF_TMUX_OPTS='-h50%'
