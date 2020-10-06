@@ -351,4 +351,4 @@ setw -g automatic-rename off
 # # /!\ do not remove the previous line
 
 # source tpm configuration
-if '[ -f "${XDG_CONFIG_HOME}/tmux/tmux.conf.tpm" ]' 'source "${XDG_CONFIG_HOME}/tmux/tmux.conf.tpm"
+if '[ -f "${XDG_CONFIG_HOME}/tmux/tmux.conf.tpm" ]' 'source "${XDG_CONFIG_HOME}/tmux/tmux.conf.tpm"'
