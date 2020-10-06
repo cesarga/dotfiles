@@ -4,6 +4,6 @@ root: ~/
 windows:
   - ~:
       panes:
-        - neofeth
+        - neofetch
   - dev:
       root: /z/dev/projects
