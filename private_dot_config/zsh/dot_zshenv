@@ -20,6 +20,9 @@ if [[ "$(uname -r)" == *_"Microsoft"_* ]] ; then
     export TERM="xterm-256color"
 fi
 
+# custom binaries
+export PATH="$HOME/bin:$PATH"
+
 # history
 export HISTSIZE=20000
 export SAVEHIST=20000
