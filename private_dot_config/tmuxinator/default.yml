@@ -1,9 +1,0 @@
-name: default
-root: ~/
-
-windows:
-  - ~:
-      panes:
-        - neofetch
-  - dev:
-      root: /z/dev/projects

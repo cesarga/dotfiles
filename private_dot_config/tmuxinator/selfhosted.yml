@@ -1,0 +1,9 @@
+name: selfhosted
+root: ~/
+
+startup_window: locall
+
+windows:
+  - locall:
+      root: /z/dev/projects/localshare/devilbox
+      command: docker-compose ps
