@@ -1,11 +1,10 @@
 name: sh
 root: ~/
 
-on_project_first_start: neofetch
-
 startup_window: sh
 
 windows:
   - sh:
+      - neofetch
   - dev:
       root: /z/dev/projects

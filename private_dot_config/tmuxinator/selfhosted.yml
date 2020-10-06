@@ -1,9 +1,11 @@
-name: selfhosted
+name: loc
 root: ~/
 
 startup_window: locall
+attach: false
 
 windows:
   - locall:
-      root: /z/dev/projects/localshare/devilbox
-      command: docker-compose ps
+      root: /z/dev/projects/localshare
+      panes:
+        - docker-compose ps
