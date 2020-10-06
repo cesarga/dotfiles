@@ -318,6 +318,10 @@ set-option -g detach-on-destroy off
 #unbind detach
 unbind-key -T prefix d
 
+# Shift arrow to navigate tabs
+bind -n S-Left previous-window
+bind -n S-Right next-window
+
 # Control Shift arrow to move tabs
 bind -n C-S-Left swap-window -t -1
 bind -n C-S-Right swap-window -t +1
