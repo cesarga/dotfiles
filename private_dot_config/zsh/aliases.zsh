@@ -25,7 +25,7 @@ mkcdir() {
 
 alias du="ncdu -rr -x --exclude .git --exclude node_modules --exclude vendor"
 
-alias cat='bat --theme ansi-dark'
+alias cat='catbat --theme ansi-dark'
 
 alias -- -='cd -'
 alias .='l'
