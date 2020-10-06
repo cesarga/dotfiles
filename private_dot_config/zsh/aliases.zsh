@@ -28,6 +28,8 @@ alias du="ncdu -rr -x --exclude .git --exclude node_modules --exclude vendor"
 alias bat='batcat'
 alias cat='bat --theme ansi-dark'
 
+alias fd='fdfind'
+
 alias -- -='cd -'
 alias .='l'
 alias ..='cd ..'

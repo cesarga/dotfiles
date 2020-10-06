@@ -35,11 +35,3 @@ export FZF_COMPLETION_OPTS='+c -x'
 export FZF_TMUX=1;
 export FZF_TMUX_HEIGHT='50%'
 #export FZF_TMUX_OPTS='-h50%'
-
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" --exclude "node_modules" --exclude "vendor" . "$1"
-}
-
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" --exclude "node_modules" --exclude "vendor" . "$1"
-}
