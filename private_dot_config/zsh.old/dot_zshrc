@@ -9,4 +9,3 @@ colors
 # which causes a conflict.
 compdef -d mcd
 
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
