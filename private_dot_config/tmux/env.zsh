@@ -1,0 +1,3 @@
+export DISABLE_AUTO_TITLE="true"
+export DISABLE_AUTO_UPDATE="true"
+export DISABLE_UNTRACKED_FILES_DIRTY="true"

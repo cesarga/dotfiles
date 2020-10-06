@@ -17,6 +17,14 @@ do
   source $file
 done
 
+## env vars
+typeset -U env_files
+env_files=($XDG_CONFIG_HOME/**/env.zsh)
+for file in ${(M)env_files}
+do
+  source $file
+done
+
 ## initialization scripts
 typeset -U init_files
 init_files=($XDG_CONFIG_HOME/**/init.zsh)

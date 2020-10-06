@@ -1,6 +1,4 @@
 # oh-my-zsh
 export ZSH_TMUX_AUTOSTART="false"
 export ZSH_DISABLE_COMPFIX=true
-export DISABLE_AUTO_TITLE="true"
-export DISABLE_AUTO_UPDATE="true"
-export DISABLE_UNTRACKED_FILES_DIRTY="true"
+
