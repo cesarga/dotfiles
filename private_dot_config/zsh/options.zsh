@@ -16,7 +16,7 @@ setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 setopt COMPLETE_ALIASES # don't expand aliases _before_ completion has finished (like: git comm-[tab])
 
-nsetopt NOMATCH # allow [ or ] whereever you want
+unsetopt NOMATCH # allow [ or ] whereever you want
 
 #
 # History
